@@ -12,5 +12,7 @@ RSpec.describe User, type: :model do
 	it { is_expected.to respond_to(:confirmed_at) }
 	it { is_expected.to respond_to(:confirmation_sent_at) }
 	it { is_expected.to respond_to(:unconfirmed_email) }
+	it { is_expected.to respond_to(:role) }
+	it { is_expected.to respond_to(:organization_id) }
  
 end
