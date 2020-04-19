@@ -8,5 +8,6 @@ RSpec.describe User, type: :model do
 	it { is_expected.to respond_to(:remember_created_at) }
 	it { is_expected.to respond_to(:created_at) }
 	it { is_expected.to respond_to(:updated_at) }
+	it { is_expected.to respond_to(:confirmation_token) }
  
 end
