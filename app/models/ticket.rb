@@ -1,3 +1,11 @@
+# Validates that it has a name, phone#, 
+# resource category and a region. Can be 
+# 'open' or 'closed' depending on whether
+# it has an organization associated with it or not 
+
+# belongs to region, resource category, and optionaly, an organization
+
+
 class Ticket < ApplicationRecord
 
   belongs_to :region

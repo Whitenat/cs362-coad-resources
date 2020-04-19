@@ -1,3 +1,7 @@
+# validates that it has a unique name
+# has many tickets
+
+
 class Region < ApplicationRecord
 
   has_many :tickets

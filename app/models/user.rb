@@ -1,3 +1,9 @@
+# validates that it has a valid email address and 
+# has a role of either admin or organization
+
+# optionally belongs to an organization
+
+
 class User < ApplicationRecord
 
   enum role: [:admin, :organization]
