@@ -5,6 +5,7 @@ RSpec.describe Ticket, type: :model do
 	it { is_expected.to respond_to(:description) }
 	it { is_expected.to respond_to(:phone) }
 	it { is_expected.to respond_to(:organization_id) }
+	it { is_expected.to respond_to(:created_at) }
 	it { is_expected.to respond_to(:region_id) }
 	it { is_expected.to respond_to(:resource_category_id) }
 
