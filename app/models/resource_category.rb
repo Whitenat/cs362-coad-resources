@@ -1,4 +1,4 @@
-# Validates tha it has a unique name and 
+# Validates that it has a unique name and 
 # can have an activated or deactivated scope
 # has/belongs to many organizations & has many tickets
 
