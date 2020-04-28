@@ -20,7 +20,10 @@ RSpec.describe Ticket, type: :model do
 	describe 'validations' do
 		it { is_expected.to validate_presence_of(:name)}
 		it { is_expected.to validate_presence_of(:phone)}
-		#it { is_expected.to validate :name, length: {minimum: 1}}
+		it { is_expected.to validate_presence_of(:region_id)}
+		it { is_expected.to validate_presence_of(:resource_category_id)}
+		
+		it { is_expected.to validate_length_of(:name).is_at_least(1)}
 	end
 
 	describe '#open?' do
