@@ -19,6 +19,7 @@ RSpec.describe Ticket, type: :model do
 
 	describe 'validations' do
 		it { is_expected.to validate_presence_of(:name)}
+		it { is_expected.to validate_presence_of(:phone)}
 		#it { is_expected.to validate :name, length: {minimum: 1}}
 	end
 
