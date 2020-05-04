@@ -25,7 +25,50 @@ RSpec.describe Ticket, type: :model do
 		
 		it { is_expected.to validate_length_of(:name).is_at_least(1)}
 		it { is_expected.to validate_length_of(:name).is_at_most(255)}
+
+		it { is_expected.to validate_length_of(:description).is_at_most(1020)}
+
+		#it { is_expected.to validate(:phone).is_plausible}
 	end
+
+	# describe 'scopes' do
+	# 	describe 'open' do
+	# 		it 'includes open tickets but not closed tickets' do
+	# 			open_ticket = Ticket.create(closed: false, organization: nil, name: "name", phone: "1112223333", region: Region.new, resource_category_id: 12, closed_at: nil )
+	# 			closed_ticket = Ticket.create(closed: true, organization: nil, name: "name", phone: "1112223333", region: Region.new, resource_category_id: 12, closed_at: nil )
+
+	# 			open_tickets = Ticket.open 
+	# 			closed_tickets = Ticket.closed
+
+	# 			expect(open_tickets).to include(open_ticket)
+	# 			expect(open_tickets).not_to include(closed_ticket)
+	# 		end
+
+	# 		it 'includes closed tickets but not open tickets' do
+	# 			open_ticket = Ticket.create(closed: false, organization: nil, name: "name", phone: "1112223333", region: Region.new, resource_category_id: 12, closed_at: nil )
+	# 			closed_ticket = Ticket.create(closed: true, organization: nil, name: "name", phone: "1112223333", region: Region.new, resource_category_id: 12, closed_at: nil )
+
+	# 			open_tickets = Ticket.open
+	# 			closed_tickets = Ticket.closed
+
+	# 			expect(closed_tickets).to include(closed_ticket)
+	# 			expect(closed_tickets).not_to inclued(open_tickets)
+	# 		end
+	# 	end
+		
+		# describe 'organization' do
+		# 	it 'includes an orgainization with an open ticket' do
+		# 		ticket_with_organization = Ticket.create(closed: false, organization: 'Fake Organization')
+		# 		closed_ticket_with_organization = Ticket.create(closed: true, organization: 'Fake Organization')
+
+		# 		tickets_with_org = Ticket.all_organization
+		# 		closed_tickets_with_org = Ticket.
+
+		# 		expect(ticket_with_organization).to include(ticket_with_organization)
+		# 	end
+
+		# end
+	# end
 
 	describe '#open?' do
 		it "is open by default" do
