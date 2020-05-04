@@ -1,7 +1,7 @@
 # Validates the existence of contact information including email, name, phone
 # # and PoC. Also contains methods to manage the status of the organizations 
 # application
-# has_many users, and tickets and has/belings to many resource categories
+# has_many users, and tickets and has/belings to many resource categories.
 
 class Organization < ApplicationRecord
 
