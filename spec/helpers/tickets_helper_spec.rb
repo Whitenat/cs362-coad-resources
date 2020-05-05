@@ -15,5 +15,5 @@ RSpec.describe TicketsHelper, type: :helper do
         it "Validates a Normal Number" do
             expect(helper.format_phone_number("321-794-0137")).to eq("+13217940137")
 		end
-  end
+  	end
 end
