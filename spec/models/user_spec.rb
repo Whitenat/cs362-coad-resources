@@ -35,4 +35,10 @@ RSpec.describe User, type: :model do
 	describe 'scopes' do
 
 	end
+
+	describe "#to_s" do
+	  it "does not raise" do
+	    expect { User.new.to_s }.not_to raise_error
+	  end
+	end
 end
