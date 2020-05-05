@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe ResourceCategory, type: :model do
-	
+
 	describe 'properties' do
 		it { is_expected.to respond_to(:name) }
 		it { is_expected.to respond_to(:created_at) }
@@ -10,7 +10,7 @@ RSpec.describe ResourceCategory, type: :model do
 	end
 
 	describe 'relationships' do
-
+		it { is_expected.to belong_to(:organizations) }
 	end
 
 	describe 'validations' do
