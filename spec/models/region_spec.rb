@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe Region, type: :model do
 
-	let(:region) {FactoryBot.build(:region) }
-	let(:unspecified_region) {FactoryBot.build(:region) }
+	# let(:region) {FactoryBot.build(:region) }
+	# let(:unspecified_region) {FactoryBot.build(:region) }
 
 	describe 'properties' do
 		it { is_expected.to respond_to(:name) }
