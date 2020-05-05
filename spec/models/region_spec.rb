@@ -5,10 +5,11 @@ RSpec.describe Region, type: :model do
 	let(:region) {FactoryBot.build(:region) }
 	let(:unspecified_region) {FactoryBot.build(:region) }
 
-	it { is_expected.to respond_to(:name) }
-	it { is_expected.to respond_to(:created_at) }
-	it { is_expected.to respond_to(:updated_at) }
-
+	describe 'properties' do
+		it { is_expected.to respond_to(:name) }
+		it { is_expected.to respond_to(:created_at) }
+		it { is_expected.to respond_to(:updated_at) }
+	end
 
 	describe "relationships" do
 		it {is_expected.to have_many(:tickets)}

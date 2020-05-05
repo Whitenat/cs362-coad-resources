@@ -12,7 +12,7 @@ RSpec.describe Ticket, type: :model do
 
 	describe 'relationships' do
 		#it { is_expected.to belong_to(:organization) }
-		#it { is_expected.to belong_to(:region) }
+		it { is_expected.to belong_to(:region) }
 		it { is_expected.to belong_to(:resource_category) }
 
 	end
