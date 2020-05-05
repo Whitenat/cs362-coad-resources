@@ -22,13 +22,11 @@ RSpec.describe Region, type: :model do
 		it { is_expected.to validate_uniqueness_of(:name).case_insensitive }
 	end
 
-	# describe "to_s" do
-	# 	it "has a string representation that is the name" do
-	# 	region = build(:region)
-	# 	region.name = 'FAKE'
-	# 	expect(region.to_s).to eq('FAKE')
-	# 	end
-	# end
+	describe "#to_s" do
+		it "does not raise" do
+		  expect { Region.new.to_s }.not_to raise_error
+		end
+  end
 
 	describe "::unspecified" do	
 		it "creates a new Unspecified region when one does not exist" do
@@ -43,6 +41,7 @@ RSpec.describe Region, type: :model do
 			expect(Region.unspecified.name).to eq('Unspecified')
 		end
 	end
+
 end
 		
 
