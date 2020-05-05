@@ -1,47 +1,65 @@
 require 'rails_helper'
 
-
-
 RSpec.describe Region, type: :model do
+
 	it { is_expected.to respond_to(:name) }
 	it { is_expected.to respond_to(:created_at) }
 	it { is_expected.to respond_to(:updated_at) }
-# it 'exists' do
-# 	Region = Region.new
-# end
-end
 
-describe "attributes" do
-  it "has a name" do
-region = Region.new
-expect(region).to respond_to(:name)
+   it 'exists' do
+    Region = Region.new
+   end
+
+
+  describe "attributes" do
+
+    it "has a name" do
+      region = Region.new
+      expect(region).to respond_to(:name)
+    end
+
   end
 
 
-  describe "relationships" dp
-  it "has many ticket" do
-    region = Region.new
-    expect(region).to have_many(:tickets)
-end
+  describe "relationships" do
+
+    it "has many ticket" do
+      region = Region.new
+      expect(region).to have_many(:tickets)
+    end
+
+  end
 
 
   #Methods
   describe "to_s" do
+
     it "has a string representation that is the name" do
       expected_name = 'FAKE'
       region = Region.new(name: expected_name)
       expect(region.to_s).to_eq(expected_name)
     end
 
-    describe "::unspecified" do
-      #TODO?
-      it "todo" do
-        pending
-      end
+  end
+
+  describe "::unspecified" do
+
+    #TODO?
+    it "todo" do
+      pending
     end
 
-    #Validations
-    describe "validations" do
+  end
+
+
+  #Validations
+
+  describe "validations" do
+  
       it "is not valid without a name" do
-        
-    end
+        #TODO
+      end
+
+  end
+
+end
