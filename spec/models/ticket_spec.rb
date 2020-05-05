@@ -86,5 +86,11 @@ RSpec.describe Ticket, type: :model do
 		end
 	end
 
+	describe "#to_s" do
+	  it "does not raise" do
+	    expect { Ticket.new.to_s }.not_to raise_error
+	  end
+	end
+
 	
 end
