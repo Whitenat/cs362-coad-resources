@@ -29,13 +29,29 @@ RSpec.describe ResourceCategory, type: :model do
 		it "is active by default" do
 			expect(ResourceCategory.new).to be_active
 		end
+
+		it "does not raise" do
+		  expect { ResourceCategory.new.inactive? }.not_to raise_error
+		end
+	end
+
+	describe 'activate' do
+		it "does not raise" do
+		  expect { ResourceCategory.new.activate() }.not_to raise_error
+		end
+	end
+
+	describe 'deactivate' do
+		it "does not raise" do
+		  expect { ResourceCategory.new.deactivate() }.not_to raise_error
+		end
 	end
 
 	describe "#to_s" do
 		it "does not raise" do
 		  expect { ResourceCategory.new.to_s }.not_to raise_error
 		end
-  	end
+  end
 
 	describe "::unspecified" do	
 		it "creates a new Unspecified resource_category when one does not exist" do
