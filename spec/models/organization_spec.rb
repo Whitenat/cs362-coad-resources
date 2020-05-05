@@ -43,11 +43,22 @@ RSpec.describe Organization, type: :model do
 		it { is_expected.to validate_length_of(:name).is_at_least(1).is_at_most(255).on(:create) }
 		it { is_expected.to validate_length_of(:description).is_at_most(1020).on(:create) }
 	end
+	describe "approve" do
+		it "does not raise" do
+		  expect { Organization.new.approve() }.not_to raise_error
+		end
+  end
+
+  describe "reject" do
+		it "does not raise" do
+		  expect { Organization.new.reject() }.not_to raise_error
+		end
+  end
 
 	describe "#to_s" do
-	it "does not raise" do
-	  expect { Organization.new.to_s }.not_to raise_error
-	end
+		it "does not raise" do
+		  expect { Organization.new.to_s }.not_to raise_error
+		end
   end
 
 
