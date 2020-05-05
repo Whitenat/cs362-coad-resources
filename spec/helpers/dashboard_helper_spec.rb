@@ -12,4 +12,23 @@ require 'rails_helper'
 # end
 RSpec.describe DashboardHelper, type: :helper do
 
+	describe DashboardHelper do
+
+	  describe "dashboard_for" do
+	    # it "sends admin user to admin dashboard" do
+	    #   expect(helper.dashboard_for()).to eq("admin_dashboard")
+	    # end
+	    # it "sends submitted organizations to submitted dash" do
+	    #   expect(helper.dashboard_for()).to eq("organization_submitted_dashboard")
+	    # end
+	    # it "sends approved organizations to approved dash" do
+	    #   expect(helper.dashboard_for()).to eq("organization_approved_dashboard")
+	    # end
+	    it "sends unknown users to default dash" do
+	      expect(helper.dashboard_for(User.new)).to eq("create_application_dashboard")
+	    end
+	  end
+
+	end
+
 end
