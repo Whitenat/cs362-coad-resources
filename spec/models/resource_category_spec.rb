@@ -31,4 +31,18 @@ RSpec.describe ResourceCategory, type: :model do
 		end
 	end
 
+	describe "::unspecified" do	
+		it "creates a new Unspecified resource_category when one does not exist" do
+			expect(ResourceCategory.where(name: 'Unspecified')).to be_empty
+			expect{ ResourceCategory.unspecified }.to change { ResourceCategory.count }
+		end
+		# it "does not create a new Unspecified resource_category when one already exists" do
+		# 	FactoryBot.create(:resource_category, :unspecified)
+		# 	expect{ ResourceCategory.unspecified }.to_not change { ResourceCategory.count }
+		# end
+		it "does not create a new Unspecified resource_category when one already has one" do
+			expect(ResourceCategory.unspecified.name).to eq('Unspecified')
+		end
+	end
+
 end
