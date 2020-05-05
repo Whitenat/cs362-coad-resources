@@ -11,7 +11,8 @@ RSpec.describe Ticket, type: :model do
 	end
 
 	describe 'relationships' do
-		#it { is_expected.to belong_to(:organization) }
+		#TODO update rspec version
+		#it { is_expected.to belong_to(:organization).optional }
 		it { is_expected.to belong_to(:region) }
 		it { is_expected.to belong_to(:resource_category) }
 

@@ -25,4 +25,10 @@ RSpec.describe ResourceCategory, type: :model do
 
 	end
 
+	describe '#inactive?' do
+		it "is active by default" do
+			expect(ResourceCategory.new).to be_active
+		end
+	end
+
 end
