@@ -22,8 +22,10 @@ RSpec.describe Region, type: :model do
 		it { is_expected.to validate_uniqueness_of(:name).case_insensitive }
 	end
 
-	# describe "#to_s" do
+	# describe "to_s" do
 	# 	it "has a string representation that is the name" do
+	# 	region = build(:region)
+	# 	region.name = 'FAKE'
 	# 	expect(region.to_s).to eq('FAKE')
 	# 	end
 	# end
