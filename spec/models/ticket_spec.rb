@@ -28,7 +28,12 @@ RSpec.describe Ticket, type: :model do
 
 		it { is_expected.to validate_length_of(:description).is_at_most(1020)}
 
-		#it { is_expected.to validate(:phone).is_plausible}
+		# it "validates phone number" do
+		#   ticket = ticket() # invokes the `let`
+		#   expect(ticket).to be_valid
+		#   ticket.phone = "INVALID"
+		#   expect(ticket).to_not be_valid
+		# end
 	end
 
 	# describe 'scopes' do
