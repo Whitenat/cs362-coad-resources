@@ -10,7 +10,7 @@ RSpec.describe ResourceCategory, type: :model do
 	end
 
 	describe 'relationships' do
-		it { is_expected.to belong_to(:organizations) }
+		it { is_expected.to have_and_belong_to_many(:organizations) }
 	end
 
 	describe 'validations' do
