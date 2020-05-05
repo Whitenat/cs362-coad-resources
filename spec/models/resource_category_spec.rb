@@ -31,6 +31,12 @@ RSpec.describe ResourceCategory, type: :model do
 		end
 	end
 
+	describe "#to_s" do
+	it "does not raise" do
+	  expect { ResourceCategory.new.to_s }.not_to raise_error
+	end
+  end
+
 	describe "::unspecified" do	
 		it "creates a new Unspecified resource_category when one does not exist" do
 			expect(ResourceCategory.where(name: 'Unspecified')).to be_empty

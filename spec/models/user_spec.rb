@@ -35,5 +35,4 @@ RSpec.describe User, type: :model do
 	describe 'scopes' do
 
 	end
- 
 end
