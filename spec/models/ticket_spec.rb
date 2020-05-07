@@ -37,30 +37,42 @@ RSpec.describe Ticket, type: :model do
 		# end
 	end
 
-	# describe 'scopes' do
-	# 	describe 'open' do
-	# 		it 'includes open tickets but not closed tickets' do
-	# 			open_ticket = Ticket.create(closed: false, organization: nil, name: "name", phone: "1112223333", region: Region.new, resource_category_id: 12, closed_at: nil )
-	# 			closed_ticket = Ticket.create(closed: true, organization: nil, name: "name", phone: "1112223333", region: Region.new, resource_category_id: 12, closed_at: nil )
+	describe 'scopes' do
+		# describe 'open' do
+		# 	it 'includes open tickets but not closed tickets' do
+		# 		region = Region.create(name: 'Fake')
+		# 		resource_category = ResourceCategory.new(name: 'Fake')
+		# 		open_ticket = Ticket.create(
+		# 			closed: false,
+		# 			name: "name",
+		# 			phone: "1112223333",
+		# 			region: region,
+		# 			resource_category: resource_category
+		# 		)
+		# 		closed_ticket = Ticket.create(
+		# 			closed: true,
+		# 			name: "name",
+		# 			phone: "1112223333",
+		# 			region: region,
+		# 			resource_category: resource_category
+		# 		)
+		# 		open_tickets = Ticket.open 
 
-	# 			open_tickets = Ticket.open 
-	# 			closed_tickets = Ticket.closed
+		# 		expect(open_tickets).to include(open_ticket)
+		# 		expect(open_tickets).not_to include(closed_ticket)
+		# 	end
+		# end
+		# describe 'closed' do
+		# 	it 'includes closed tickets but not open tickets' do
+		# 		open_ticket = Ticket.create(closed: false, organization: nil, name: "name", phone: "1112223333", region: Region.new, resource_category_id: 12, closed_at: nil )
+		# 		closed_ticket = Ticket.create(closed: true, organization: nil, name: "name", phone: "1112223333", region: Region.new, resource_category_id: 12, closed_at: nil )
 
-	# 			expect(open_tickets).to include(open_ticket)
-	# 			expect(open_tickets).not_to include(closed_ticket)
-	# 		end
+		# 		closed_tickets = Ticket.closed
 
-	# 		it 'includes closed tickets but not open tickets' do
-	# 			open_ticket = Ticket.create(closed: false, organization: nil, name: "name", phone: "1112223333", region: Region.new, resource_category_id: 12, closed_at: nil )
-	# 			closed_ticket = Ticket.create(closed: true, organization: nil, name: "name", phone: "1112223333", region: Region.new, resource_category_id: 12, closed_at: nil )
-
-	# 			open_tickets = Ticket.open
-	# 			closed_tickets = Ticket.closed
-
-	# 			expect(closed_tickets).to include(closed_ticket)
-	# 			expect(closed_tickets).not_to inclued(open_tickets)
-	# 		end
-	# 	end
+		# 		expect(closed_tickets).to include(closed_ticket)
+		# 		expect(closed_tickets).not_to include(open_ticket)
+		# 	end
+		# end
 		
 		# describe 'organization' do
 		# 	it 'includes an orgainization with an open ticket' do
@@ -74,7 +86,7 @@ RSpec.describe Ticket, type: :model do
 		# 	end
 
 		# end
-	# end
+	end
 
 	describe '#open?' do
 		it "is open by default" do
