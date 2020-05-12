@@ -16,7 +16,7 @@ RSpec.describe DashboardHelper, type: :helper do
 
 	  describe "dashboard_for" do
 	    # it "sends admin user to admin dashboard" do
-	    #   expect(helper.dashboard_for(User.where(role: "admin"))).to eq("admin_dashboard")
+	    #   expect(helper.dashboard_for(admin_user)).to eq("admin_dashboard")
 	    # end
 	    # it "sends submitted organizations to submitted dash" do
 	    #   expect(helper.dashboard_for()).to eq("organization_submitted_dashboard")
