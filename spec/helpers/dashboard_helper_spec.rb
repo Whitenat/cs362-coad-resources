@@ -15,17 +15,6 @@ RSpec.describe DashboardHelper, type: :helper do
 	describe DashboardHelper do
 
 	  describe "dashboard_for" do
-<<<<<<< HEAD
-	    # it "sends admin user to admin dashboard" do
-	    #   expect(helper.dashboard_for(admin_user)).to eq("admin_dashboard")
-	    # end
-	    # it "sends submitted organizations to submitted dash" do
-	    #   expect(helper.dashboard_for()).to eq("organization_submitted_dashboard")
-	    # end
-	    # it "sends approved organizations to approved dash" do
-	    #   expect(helper.dashboard_for(Organization.new.approve())).to eq("organization_approved_dashboard")
-	    # end
-=======
 	    it "sends admin user to admin dashboard" do
 	    	adminUser = User.new(role: "admin") 
 	      expect(helper.dashboard_for(adminUser)).to eq("admin_dashboard")
@@ -42,7 +31,6 @@ RSpec.describe DashboardHelper, type: :helper do
 	      expect(helper.dashboard_for(approvedOrganization)).to eq("organization_approved_dashboard")
 	    end
 
->>>>>>> 5e683b50042dbf2a8a8da98786e030e5a3f2a046
 	    it "sends unknown users to default dash" do
 	      expect(helper.dashboard_for(User.new)).to eq("create_application_dashboard")
 	    end
