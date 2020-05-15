@@ -35,7 +35,8 @@ RSpec.describe RegionsController, type: :controller do
 
         # specify "GET #show" do
         #     region = create(:region)
-        #     expect(get(:show, params: {id: 'FAKE'})).to be_successful
+        #     #region = build(:region)
+        #     expect(get(:show, params: { id:region })).to be_successful
         # end
     end
 
