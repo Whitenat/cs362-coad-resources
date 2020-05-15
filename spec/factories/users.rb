@@ -1,6 +1,10 @@
 FactoryBot.define do
     factory :user do
-        email
+        #email
+        sequence :email do |n|
+            "FAKE#{n}@fake.com"
+        end
+        
         password { "fake password" }
         
         trait :admin do   

@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     get '/signup' => 'users/registrations#new'
     get '/edit_profile' => 'users/registrations#edit'
   end
+  
   devise_for :users, controllers: { registrations: 'users/registrations' }
 
   authenticate :user do
