@@ -25,9 +25,13 @@ RSpec.describe DashboardController, type: :controller do
         before do   
             sign_in(admin)
         end
-            
         specify 'GET #index' do
             expect(get(:index)).to be_successful 
+        end
+
+        specify "GET #show" do
+            region = create(:region)
+            expect(get(:show, params: {id: 'FAKE'})).to be_successful
         end
     end
 
