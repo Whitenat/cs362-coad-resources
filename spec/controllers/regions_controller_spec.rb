@@ -36,7 +36,12 @@ RSpec.describe RegionsController, type: :controller do
         # specify "GET #show" do
         #     region = create(:region)
         #     #region = build(:region)
-        #     expect(get(:show, params: { id:region })).to be_successful
+        #     expect(get(:show, params: {id: region.id, region: atrributes_for(:region)})).to be_successful
+        # end
+        
+        # specify "POST #update" do
+        #     region = create(:region)
+        #     expect(post(:update, params {id: region.id, region: atrributes_for(:region)})).to redirect_to(regions_path(region))
         # end
     end
 
