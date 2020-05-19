@@ -5,9 +5,9 @@ FactoryBot.define do
 
         sequence(:name) { |n| "user#{n}" }
 
-        phone {'487-561-4687'}
-        primary_name{'Bitch'}
-        secondary_name{'Slut'}
-        secondary_phone{'539-473-9047'}
+        phone {'1487-561-4687'}
+        primary_name{'B'}
+        secondary_name{'S'}
+        secondary_phone{'1539-473-9047'}
     end
 end

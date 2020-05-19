@@ -4,6 +4,5 @@ FactoryBot.define do
         trait :unspecified do   
             name{ 'Unspecified' }
         end
-        tickets { build_list(:ticket, 1) }
     end
 end
