@@ -35,55 +35,33 @@ RSpec.describe RegionsController, type: :controller do
 
         specify "GET #show" do
             region = create(:region)
-            #region = build(:region)
             expect(get(:show, params: {id: region.id})).to be_successful
         end
         
-        # specify "POST #update" do
-        #     region = create(:region)
-        #     expect(post(:update, params {id: region.id, region: atrributes_for(:region)})).to redirect_to(regions_path(region))
-        # end
+        specify "POST #create" do
+            expect(post(:create, params: {region: attributes_for(:region)})).to redirect_to(regions_path)
+        end
+
+        specify "PUT #update" do
+            region = create(:region)
+            expect(put(:update, params: {id: region.id, region: attributes_for(:region)})).to redirect_to(region_path(region))
+        end
+
+        specify "DELETE #destroy" do
+            region = create(:region)
+            expect(delete(:destroy, params: {id: region.id})).to redirect_to(regions_path)
+        end
+
+        specify "GET #new" do
+          expect(get(:new)).to be_successful
+        end
+
+        specify "GET #edit" do
+          region = create(:region)
+          expect(get(:edit, params: {id: region.id})).to be_successful
+        end
+
     end
-
-    # specify "GET #new" do
-    #     expect(get(:new)).to be_successful
-    # end
-
-    # specify "GET #edit" do
-    #     region = create(:region)
-    #     expect(get(:edit, params: {id: region.id})).to be_successful
-    # end
-
-    # specify "POST #create" do
-    #     expect(post(:create, params: {region: {name: 'FAKE'}})).to redirect_to(regions_path)
-    # end
-
-    # specify "PUT #update" do
-    #     region = create(:region)
-    #     expect(put(:update, params {id: region.id, region: atrributes_for(:region)})).to redirect_to(regions_path(region))
-    # end
-
-    # specify "DELETE #destroy" do
-    #     region = create(:region)
-    #     expect( )
-
-
-
-    # context 'As an admin user' do 
-    #     let(:admin) { create(:user, :admin)}
-    #     before do   
-    #         sign_in(admin)
-    #     end
-
-
-    # context 'As an admin' do   
-    #     let(:admin_user) { create(:user, "admin") }
-    #     before(:each) { sign_in(admin_user) }
-
-    #     describe 'GET #index' do
-    #         specify { expect(get(:index)).to be_successful }
-    #     end
-    # end
 
 end
 
