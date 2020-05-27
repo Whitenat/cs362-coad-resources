@@ -29,6 +29,4 @@ RSpec.describe DashboardController, type: :controller do
             expect(get(:index)).to be_successful 
         end
     end
-
-
 end
