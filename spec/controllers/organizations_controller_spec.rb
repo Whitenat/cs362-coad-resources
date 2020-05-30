@@ -11,8 +11,8 @@ RSpec.describe OrganizationsController, type: :controller do
             expect(get(:show, params: {id: 'FAKE'})).to redirect_to(new_user_session_path)
         end
 
-        specify "POST #new" do
-            expect(post(:new)).to redirect_to(new_user_session_path )
+        specify "GET #new" do
+            expect(get(:new)).to redirect_to(new_user_session_path )
         end
 
         specify "POST #create" do
@@ -33,7 +33,8 @@ RSpec.describe OrganizationsController, type: :controller do
     end
 
     context 'As an Organization User' do
-        let(:user) { create(:user)}
+        let(:user) { create(:user, :organization_member)}
+        let(:admin_user) {create(:user, :admin)}
         before do   
             sign_in(user)
         end
@@ -41,39 +42,17 @@ RSpec.describe OrganizationsController, type: :controller do
         specify 'GET #index' do
             expect(get(:index)).to be_successful 
         end
+
+        specify "GET #new" do
+            expect(get(:new)).to be_successful
+        end
+
+        specify "POST #create" do
+            sign_in(admin_user)
+            expect(post(:create, params: {organization: attributes_for(:organization)})).to redirect_to("/dashboard")
+        end
+
     end
 
 end
 
-# context 'Organization user' do
-#     describe 'POST #create' do 
-#     let(:user) do
-#         User.create(email: 'fake@fake.com',
-#             password: 'password',
-#             password_confirmation: 'password',
-#             role: 'organization')
-#     end
-#     before do
-#         user.confirm
-#         sign_in(user)
-#     end
-#     it 'succeeds' do
-#         expect(
-#         post(
-#             :create,
-#             params: {
-#                 organization: {name: 'FAKE'},
-#                 email: 'fake@fake.com',
-#                 phone: '13045739394',
-#                 primary_name: 'FAKE primary name',
-#                 secondary_name: 'FAKE secondary name',
-#                 secondary_phone: '13037845463'
-#     },
-# }
-#     )
-# ).to redirect_to(organization_application_submitted_path)
-# end
-#         }
-#     )
-# )
-# end
