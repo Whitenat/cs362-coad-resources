@@ -16,11 +16,11 @@ RSpec.describe OrganizationsController, type: :controller do
         end
 
         specify "POST #create" do
-            expect(post(:create, params: {region: attributes_for(:region)})).to redirect_to(new_user_session_path)
+            expect(post(:create, params: {organization: attributes_for(:organization)})).to redirect_to(new_user_session_path)
         end
 
         specify "PUT #update" do
-            expect(put(:update, params: {id: 'FAKE', region: attributes_for(:region)})).to redirect_to(new_user_session_path)
+            expect(put(:update, params: {id: 'FAKE', organization: attributes_for(:organization)})).to redirect_to(new_user_session_path)
         end
 
         specify "POST #approve" do
@@ -50,6 +50,11 @@ RSpec.describe OrganizationsController, type: :controller do
         specify "POST #create" do
             sign_in(admin_user)
             expect(post(:create, params: {organization: attributes_for(:organization)})).to redirect_to("/dashboard")
+        end
+
+        specify "PUT #update" do
+            organization = create(:organization)
+            expect(put(:update, params:{id: organization.id, organization: attributes_for(:organization)})).to redirect_to("/dashboard")
         end
 
     end
