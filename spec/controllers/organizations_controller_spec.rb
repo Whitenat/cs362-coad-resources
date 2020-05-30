@@ -32,6 +32,17 @@ RSpec.describe OrganizationsController, type: :controller do
         end
     end
 
+    context 'As an Organization User' do
+        let(:user) { create(:user)}
+        before do   
+            sign_in(user)
+        end
+
+        specify 'GET #index' do
+            expect(get(:index)).to be_successful 
+        end
+    end
+
 end
 
 # context 'Organization user' do

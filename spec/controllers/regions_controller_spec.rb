@@ -19,7 +19,7 @@ RSpec.describe RegionsController, type: :controller do
         end
 
         specify 'GET #index' do
-            expect(get(:new)).to redirect_to(dashboard_path) 
+            expect(get(:index)).to redirect_to(dashboard_path) 
         end
     end
 
