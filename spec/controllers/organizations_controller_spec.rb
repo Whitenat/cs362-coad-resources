@@ -22,7 +22,16 @@ RSpec.describe OrganizationsController, type: :controller do
         specify "PUT #update" do
             expect(put(:update, params: {id: 'FAKE', region: attributes_for(:region)})).to redirect_to(new_user_session_path)
         end
+
+        specify "POST #approve" do
+            expect(post(:approve, params:{id: 'FAKE'})).to redirect_to(new_user_session_path)
+        end
+
+        specify "POST #reject" do
+            expect(post(:reject, params:{id: 'FAKE'})).to redirect_to(new_user_session_path)
+        end
     end
+
 end
 
 # context 'Organization user' do
