@@ -57,6 +57,16 @@ RSpec.describe OrganizationsController, type: :controller do
             expect(put(:update, params:{id: organization.id, organization: attributes_for(:organization)})).to redirect_to("/dashboard")
         end
 
+        specify "POST #approve" do
+            organization = create(:organization)
+            expect(post(:approve, params:{id: organization.id})).to redirect_to("/dashboard")
+        end
+
+        specify "POST #reject" do
+            organization = create(:organization)
+            expect(post(:reject, params:{id: organization.id})).to redirect_to("/dashboard")
+        end
+
     end
 
 end
