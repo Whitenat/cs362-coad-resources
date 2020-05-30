@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Rejecting an organization', type: :feature do
-		before(:each) do
+	before(:each) do
         @organization = FactoryBot.create(:organization)
         @user = FactoryBot.create(:user, :admin)
         log_in_as(@user)
