@@ -69,5 +69,39 @@ RSpec.describe OrganizationsController, type: :controller do
 
     end
 
+    context 'As an Admin User' do
+        let(:user) {create(:user, :admin)}
+        before do   
+            sign_in(user)
+        end
+
+        specify 'GET #index' do
+            expect(get(:index)).to be_successful 
+        end
+
+        specify "GET #new" do
+            expect(get(:new)).to redirect_to("/dashboard")
+        end
+
+        specify "POST #create" do
+            expect(post(:create, params: {organization: attributes_for(:organization)})).to redirect_to("/dashboard")
+        end
+
+        specify "PUT #update" do
+            organization = create(:organization)
+            expect(put(:update, params:{id: organization.id, organization: attributes_for(:organization)})).to redirect_to("/dashboard")
+        end
+
+        specify "POST #approve" do
+            organization = create(:organization)
+            expect(post(:approve, params:{id: organization.id})).to redirect_to("/organizations")
+        end
+
+        specify "POST #reject" do
+            organization = create(:organization)
+            expect(post(:reject, params: { id: organization.id, organization: {rejection_reason: 'FAKE'} } )).to redirect_to("/organizations")
+        end
+    end
+
 end
 
