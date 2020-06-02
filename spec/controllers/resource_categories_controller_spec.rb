@@ -86,6 +86,11 @@ RSpec.describe ResourceCategoriesController, type: :controller do
     	specify { expect(post(:create, params: {resource_category: attributes_for(:resource_category)})).to redirect_to(resource_categories_path) }
     end
 
+    specify 'POST #create with duplicate info' do
+    	resource_category = create(:resource_category)
+    	expect(post(:create, params: {resource_category: attributes_for(:resource_category)})).to redirect_to('/resource_categories')
+    end
+
     specify 'PUT #update' do
     	resource_category = create(:resource_category)
     	expect(put(:update, params: {id: resource_category.id, resource_category: attributes_for(:resource_category)})).to redirect_to(resource_category_path(resource_category))

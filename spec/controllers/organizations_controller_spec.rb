@@ -53,8 +53,10 @@ RSpec.describe OrganizationsController, type: :controller do
         end
 
         specify "PUT #update" do
-          organization = create(:organization)
-          expect(put(:update, params:{id: organization.id, organization: attributes_for(:organization)})).to redirect_to("/dashboard")
+          organization = create(:organization, :approved)
+          user.organization = organization
+          user.save
+          expect(put(:update, params:{id: organization.id, organization: attributes_for(:organization)})).to redirect_to(organization_path(id: organization.id))
         end
 
         specify "POST #approve" do

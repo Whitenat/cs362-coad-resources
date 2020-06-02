@@ -31,7 +31,7 @@ class Organization < ApplicationRecord
 
   def reject
     self.status = :rejected
-  end
+  end 
 
   def set_default_status
     self.status ||= :submitted
